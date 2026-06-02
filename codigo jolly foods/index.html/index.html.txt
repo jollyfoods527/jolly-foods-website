@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jolly Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo genérico">
+      <span>Jolly Foods</span>
+    </div>
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#carta">Carta</a>
+      <a href="#tropicales">Tropicales</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-texto">
+        <h1>Sabores que alegran el día</h1>
+        <p>Hamburguesas, patatas y mucho cariño en cada bocado.</p>
+        <a href="#carta" class="btn-primario">Ver carta</a>
+      </div>
+      <div class="hero-imagen">
+        <img src="img/hero.jpg" alt="Imagen genérica">
+      </div>
+    </section>
+
+    <section id="nosotros" class="seccion seccion-clara">
+      <div class="contenedor">
+        <div class="texto">
+          <h2>Nosotros</h2>
+          <p>
+            En <strong>Jolly Foods</strong> creemos que una buena comida puede cambiarte el día.
+            Somos un pequeño local con alma de familia.
+          </p>
+        </div>
+        <div class="imagen">
+          <img src="img/local.jpg" alt="Local genérico">
+        </div>
+      </div>
+    </section>
+
+    <section id="carta" class="seccion">
+      <div class="contenedor">
+        <h2>Nuestra carta</h2>
+        <p class="subtitulo">Clásicos que nunca fallan</p>
+
+        <div class="grid-productos">
+          <article class="producto">
+            <img src="productos/burger-classic.jpg" alt="Hamburguesa genérica">
+            <h3>Jolly Classic</h3>
+            <p>Carne jugosa y salsa especial.</p>
+            <span class="precio">7,90 €</span>
+          </article>
+
+          <article class="producto">
+            <img src="productos/burger-cheese.jpg" alt="Hamburguesa genérica">
+            <h3>Cheese Lover</h3>
+            <p>Doble queso y bacon crujiente.</p>
+            <span class="precio">8,90 €</span>
+          </article>
+
+          <article class="producto">
+            <img src="productos/burger-veggie.jpg" alt="Hamburguesa genérica">
+            <h3>Veggie Smile</h3>
+            <p>Hamburguesa vegetal con aguacate.</p>
+            <span class="precio">8,50 €</span>
+          </article>
+
+          <article class="producto">
+            <img src="productos/fries.jpg" alt="Patatas genéricas">
+            <h3>Jolly Fries</h3>
+            <p>Patatas caseras con especias.</p>
+            <span class="precio">3,50 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔥 SECCIÓN: PRODUCTOS TROPICALES -->
+    <section id="tropicales" class="seccion seccion-clara">
+      <div class="contenedor">
+        <h2>Productos Tropicales</h2>
+        <p class="subtitulo">Piña · Palmito · Café</p>
+
+        <div class="grid-productos">
+
+          <!-- PIÑA -->
+          <article class="producto">
+            <img src="img/pina.jpg" alt="Piña fresca">
+            <h3>Piña Tropical</h3>
+            <p>Piña dulce y jugosa, seleccionada directamente de productores locales.</p>
+          </article>
+
+          <!-- PALMITO -->
+          <article class="producto">
+            <img src="img/palmito.jpg" alt="Palmito en frascos">
+            <h3>Palmito Premium</h3>
+            <p>Palmito tierno en conserva, ideal para ensaladas y platos gourmet.</p>
+          </article>
+
+          <!-- CAFÉ -->
+          <article class="producto">
+            <img src="img/cafe.jpg" alt="Café orgánico">
+            <h3>Café Orgánico</h3>
+            <p>Café 100% natural, aroma intenso y tostado artesanal.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion seccion-clara">
+      <div class="contenedor">
+        <div class="texto">
+          <h2>El equipo</h2>
+          <p>Un equipo pequeño, pero muy feliz de cocinar para ti.</p>
+        </div>
+        <div class="imagen">
+          <img src="img/equipo.jpg" alt="Equipo genérico">
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion contacto">
+      <div class="contenedor">
+        <h2>Contacto</h2>
+        <p>¿Te apetece algo rico? Pásate o haz tu pedido.</p>
+
+        <div class="contacto-grid">
+          <div>
+            <h3>Horario</h3>
+            <p>Lunes a Domingo</p>
+            <p>13:00 – 16:00 · 20:00 – 23:30</p>
+          </div>
+          <div>
+            <h3>Dirección</h3>
+            <p>Calle Sabores Felices, 27</p>
+            <p>Valencia</p>
+          </div>
+          <div>
+            <h3>Pedidos</h3>
+            <p>Tel: 600 123 456</p>
+            <p>Instagram: @jollyfoods</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Jolly Foods · Hecho con mucho hambre.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
