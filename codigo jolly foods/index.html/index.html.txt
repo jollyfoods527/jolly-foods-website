@@ -85,38 +85,37 @@
       </div>
     </section>
 
-    <!-- 🔥 SECCIÓN: PRODUCTOS TROPICALES -->
     <section id="tropicales" class="seccion seccion-clara">
-      <div class="contenedor">
-        <h2>Productos Tropicales</h2>
-        <p class="subtitulo">Piña · Palmito · Café</p>
+  <div class="contenedor">
+    <h2>Productos Tropicales</h2>
+    <p class="subtitulo">Piña · Palmito · Café</p>
 
-        <div class="grid-productos">
+    <div class="grid-productos">
 
-          <!-- PIÑA -->
-          <article class="producto">
-            <img src="img/pina.jpg" alt="Piña fresca">
-            <h3>Piña Tropical</h3>
-            <p>Piña dulce y jugosa, seleccionada directamente de productores locales.</p>
-          </article>
+      <!-- PIÑA -->
+      <article class="producto">
+        <img src="imgpina.jpg.png" alt="Piña Jolly Foods">
+        <h3>Piña en Conserva</h3>
+        <p>Piña premium seleccionada y envasada para conservar todo su sabor tropical.</p>
+      </article>
 
-          <!-- PALMITO -->
-          <article class="producto">
-            <img src="img/palmito.jpg" alt="Palmito en frascos">
-            <h3>Palmito Premium</h3>
-            <p>Palmito tierno en conserva, ideal para ensaladas y platos gourmet.</p>
-          </article>
+      <!-- PALMITO -->
+      <article class="producto">
+        <img src="imgpalmito.jpg.png" alt="Palmito Premium Jolly Foods">
+        <h3>Palmito Premium</h3>
+        <p>Corazones de palmito tiernos de calidad gourmet y exportación.</p>
+      </article>
 
-          <!-- CAFÉ -->
-          <article class="producto">
-            <img src="img/cafe.jpg" alt="Café orgánico">
-            <h3>Café Orgánico</h3>
-            <p>Café 100% natural, aroma intenso y tostado artesanal.</p>
-          </article>
+      <!-- CAFÉ -->
+      <article class="producto">
+        <img src="imgcafe.jpg.png" alt="Café de Especialidad">
+        <h3>Café de Especialidad</h3>
+        <p>Variedades exclusivas Geisha, Villa Sarchí y Typica Lima de Finca El Puchol.</p>
+      </article>
 
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="seccion seccion-clara">
       <div class="contenedor">
