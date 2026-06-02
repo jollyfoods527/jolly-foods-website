@@ -1,192 +1,69 @@
-/* ------------------------------
-   RESET BÁSICO
---------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* -----------------------------------------
+   🌙 MODO OSCURO AUTOMÁTICO
+------------------------------------------*/
+@media (prefers-color-scheme: dark) {
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fafafa;
-  color: #333;
-  line-height: 1.6;
-}
+  body {
+    background: #121212;
+    color: #e6e6e6;
+  }
 
-/* ------------------------------
-   HEADER
---------------------------------*/
-.header {
-  background: #ffffff;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+  .header {
+    background: #1e1e1e;
+    border-bottom: 2px solid #333;
+  }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  .nav a {
+    color: #e6e6e6;
+  }
 
-.logo img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
-}
+  .nav a:hover {
+    color: #ff8c42;
+  }
 
-.nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  .hero {
+    background: #1a1a1a;
+  }
 
-.nav a:hover {
-  color: #ff6b00;
-}
+  .hero-texto h1 {
+    color: #ffffff;
+  }
 
-/* ------------------------------
-   HERO
---------------------------------*/
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 30px;
-  background: #fff;
-}
+  .hero-texto p {
+    color: #cccccc;
+  }
 
-.hero-texto {
-  max-width: 50%;
-}
+  .btn-primario {
+    background: #ff8c42;
+  }
 
-.hero-texto h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
+  .btn-primario:hover {
+    background: #e67a35;
+  }
 
-.hero-texto p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
+  .seccion-clara {
+    background: #1a1a1a;
+  }
 
-.btn-primario {
-  background: #ff6b00;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  .producto {
+    background: #1f1f1f;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+  }
 
-.btn-primario:hover {
-  background: #e65f00;
-}
+  .producto:hover {
+    box-shadow: 0 6px 18px rgba(255,255,255,0.08);
+  }
 
-.hero-imagen img {
-  width: 420px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+  .subtitulo {
+    color: #ff8c42;
+  }
 
-/* ------------------------------
-   SECCIONES
---------------------------------*/
-.seccion {
-  padding: 60px 30px;
-}
+  .contacto-grid h3 {
+    color: #ff8c42;
+  }
 
-.seccion-clara {
-  background: #ffffff;
-}
-
-.contenedor {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.subtitulo {
-  color: #ff6b00;
-  margin-bottom: 25px;
-  font-size: 18px;
-}
-
-/* ------------------------------
-   GRID DE PRODUCTOS
---------------------------------*/
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.producto {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-.producto img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.producto h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.precio {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #ff6b00;
-  font-size: 18px;
-}
-
-/* ------------------------------
-   CONTACTO
---------------------------------*/
-.contacto-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.contacto-grid h3 {
-  margin-bottom: 10px;
-  color: #ff6b00;
-}
-
-/* ------------------------------
-   FOOTER
---------------------------------*/
-.footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  .footer {
+    background: #000;
+    color: #ccc;
+  }
 }
