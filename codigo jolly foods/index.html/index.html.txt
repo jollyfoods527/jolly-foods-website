@@ -1,164 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Jolly Foods</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo genérico">
-      <span>Jolly Foods</span>
-    </div>
-    <nav class="nav">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#carta">Carta</a>
-      <a href="#tropicales">Tropicales</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero-texto">
-        <h1>Sabores que alegran el día</h1>
-        <p>Hamburguesas, patatas y mucho cariño en cada bocado.</p>
-        <a href="#carta" class="btn-primario">Ver carta</a>
-      </div>
-      <div class="hero-imagen">
-        <img src="img/hero.jpg" alt="Imagen genérica">
-      </div>
-    </section>
-
-    <section id="nosotros" class="seccion seccion-clara">
-      <div class="contenedor">
-        <div class="texto">
-          <h2>Nosotros</h2>
-          <p>
-            En <strong>Jolly Foods</strong> creemos que una buena comida puede cambiarte el día.
-            Somos un pequeño local con alma de familia.
-          </p>
-        </div>
-        <div class="imagen">
-          <img src="img/local.jpg" alt="Local genérico">
-        </div>
-      </div>
-    </section>
-
-    <section id="carta" class="seccion">
-      <div class="contenedor">
-        <h2>Nuestra carta</h2>
-        <p class="subtitulo">Clásicos que nunca fallan</p>
-
-        <div class="grid-productos">
-          <article class="producto">
-            <img src="productos/burger-classic.jpg" alt="Hamburguesa genérica">
-            <h3>Jolly Classic</h3>
-            <p>Carne jugosa y salsa especial.</p>
-            <span class="precio">7,90 €</span>
-          </article>
-
-          <article class="producto">
-            <img src="productos/burger-cheese.jpg" alt="Hamburguesa genérica">
-            <h3>Cheese Lover</h3>
-            <p>Doble queso y bacon crujiente.</p>
-            <span class="precio">8,90 €</span>
-          </article>
-
-          <article class="producto">
-            <img src="productos/burger-veggie.jpg" alt="Hamburguesa genérica">
-            <h3>Veggie Smile</h3>
-            <p>Hamburguesa vegetal con aguacate.</p>
-            <span class="precio">8,50 €</span>
-          </article>
-
-          <article class="producto">
-            <img src="productos/fries.jpg" alt="Patatas genéricas">
-            <h3>Jolly Fries</h3>
-            <p>Patatas caseras con especias.</p>
-            <span class="precio">3,50 €</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="tropicales" class="seccion seccion-clara">
-  <div class="contenedor">
-    <h2>Productos Tropicales</h2>
-    <p class="subtitulo">Piña · Palmito · Café</p>
-
-    <div class="grid-productos">
-
-      <!-- PIÑA -->
-      <article class="producto">
-        <img src="imgpina.jpg.png" alt="Piña Jolly Foods">
-        <h3>Piña en Conserva</h3>
-        <p>Piña premium seleccionada y envasada para conservar todo su sabor tropical.</p>
-      </article>
-
-      <!-- PALMITO -->
-      <article class="producto">
-        <img src="imgpalmito.jpg.png" alt="Palmito Premium Jolly Foods">
-        <h3>Palmito Premium</h3>
-        <p>Corazones de palmito tiernos de calidad gourmet y exportación.</p>
-      </article>
-
-      <!-- CAFÉ -->
-      <article class="producto">
-        <img src="imgcafe.jpg.png" alt="Café de Especialidad">
-        <h3>Café de Especialidad</h3>
-        <p>Variedades exclusivas Geisha, Villa Sarchí y Typica Lima de Finca El Puchol.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-    <section class="seccion seccion-clara">
-      <div class="contenedor">
-        <div class="texto">
-          <h2>El equipo</h2>
-          <p>Un equipo pequeño, pero muy feliz de cocinar para ti.</p>
-        </div>
-        <div class="imagen">
-          <img src="img/equipo.jpg" alt="Equipo genérico">
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto" class="seccion contacto">
-      <div class="contenedor">
-        <h2>Contacto</h2>
-        <p>¿Te apetece algo rico? Pásate o haz tu pedido.</p>
-
-        <div class="contacto-grid">
-          <div>
-            <h3>Horario</h3>
-            <p>Lunes a Domingo</p>
-            <p>13:00 – 16:00 · 20:00 – 23:30</p>
-          </div>
-          <div>
-            <h3>Dirección</h3>
-            <p>Calle Sabores Felices, 27</p>
-            <p>Valencia</p>
-          </div>
-          <div>
-            <h3>Pedidos</h3>
-            <p>Tel: 600 123 456</p>
-            <p>Instagram: @jollyfoods</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Jolly Foods · Hecho con mucho hambre.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolly Foods - Del Origen a tu Éxito</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+        body{font-family:'Arial',sans-serif;background:#0A2E1A;color:#fff}
+        header{background:#000;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:3px solid #D4AF37}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo img{height:45px}
+        .logo span{font-weight:bold;font-size:22px;color:#D4AF37}
+        nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+        nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:14px;cursor:pointer;transition:0.3s}
+        nav a:hover{color:#D4AF37}
+        #cartBtn{background:#D4AF37;color:#000;border:none;padding:10px 20px;font-weight:bold;cursor:pointer;border-radius:5px}
+        #cartBtn:hover{background:#fff}
+        .hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+        .hero video{position:absolute;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.6) saturate(1.2)}
+        .hero-overlay{position:absolute;width:100%;height:100%;background:radial-gradient(circle,rgba(10,46,26,0.2) 0%,rgba(10,46,26,0.85) 100%);z-index:2}
+        .hero-content{position:relative;z-index:3;text-align:center;padding:0 20px;max-width:1000px}
+        .hero h1{font-size:5rem;margin-bottom:25px;color:#D4AF37;text-shadow:4px 4px 20px #000;line-height:1.1;letter-spacing:2px}
+        .hero .subtitle{font-size:2.2rem;margin-bottom:20px;color:#fff;text-shadow:3px 3px 10px #000;font-weight:300}
+        .hero .tagline{font-size:1.4rem;margin-bottom:50px;color:#D4AF37;text-shadow:2px 2px 8px #000}
+        .btn{background:#D4AF37;color:#000;padding:20px 50px;border:none;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;font-size:17px;transition:0.3s;border-radius:5px;box-shadow:0 4px 20px rgba(212,175,55,0.5);text-transform:uppercase}
+        .btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 8px 30px rgba(212,175,55,0.7)}
+        .btn-small{padding:12px 25px;font-size:14px;margin-top:15px}
+        section{padding:100px 5%;max-width:1400px;margin:auto;background:#0A2E1A}
+        h2{font-size:3.2rem;margin-bottom:50px;color:#D4AF37;text-align:center;text-shadow:2px 2px 10px #000}
+        h3{color:#D4AF37;font-size:2rem;margin-bottom:20px}
+        h4{color:#D4AF37;font-size:1.4rem;margin:20px 0 10px}
+        .gold-text{color:#D4AF37}
+        .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+        .nosotros-grid img{width:100%;border:4px solid #D4AF37;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+        .catalogo-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);margin:30px 0;padding:35px
