@@ -59,4 +59,181 @@
         .slogan h3{font-size:3rem;margin:0;text-shadow:3px 3px 10px #000}
         .formulario{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px;margin-top:30px;border:3px solid #D4AF37;border-radius:10px}
         .formulario input,.formulario textarea,.formulario select{width:100%;padding:18px;margin:15px 0;background:#0A2E1A;border:2px solid #D4AF37;color:#fff;font-size:16px;border-radius:5px}
-        .contacto-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 
+        .contacto-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);margin:25px 0;padding:30px;cursor:pointer;border:2px solid #D4AF37;border-radius:10px}
+        .contacto-content{display:none;padding:25px 0;font-size:18px;line-height:2}
+        .contacto-content.active{display:block}
+        .contacto-content p{margin:12px 0}
+        .contacto-content strong{color:#D4AF37}
+        footer{background:#000;padding:60px 5%;text-align:center;border-top:4px solid #D4AF37}
+        .cart-modal{display:none;position:fixed;top:0;right:0;width:420px;height:100vh;background:linear-gradient(180deg,#000 0%,#0A2E1A 100%);border-left:4px solid #D4AF37;z-index:2000;padding:35px;overflow-y:auto}
+        .cart-modal.active{display:block}
+        .cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+        .cart-item{background:#0A2E1A;padding:18px;margin:12px 0;border:2px solid #D4AF37;display:flex;justify-content:space-between;align-items:center;border-radius:8px}
+        .cart-item button{background:red;color:#fff;border:none;padding:8px 12px;cursor:pointer;border-radius:5px}
+        .cart-total{margin-top:35px;padding-top:25px;border-top:3px solid #D4AF37}
+        @media(max-width:768px){.nosotros-grid,.calidad-grid{grid-template-columns:1fr}.productos-grid{grid-template-columns:1fr}.hero h1{font-size:2.8rem}.hero .subtitle{font-size:1.5rem}nav{gap:10px}.cart-modal{width:100%}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>JOLLY FOODS</span></div>
+        <nav>
+            <a onclick="scrollToSection('inicio')">INICIO</a>
+            <a onclick="scrollToSection('nosotros')">NOSOTROS</a>
+            <a onclick="scrollToSection('catalogo')">CATÁLOGO</a>
+            <a onclick="scrollToSection('cafe')">CAFÉ GOURMET</a>
+            <a onclick="scrollToSection('calidad')">CALIDAD</a>
+            <a onclick="scrollToSection('mayoristas')">MAYORISTAS</a>
+            <a onclick="scrollToSection('pedidos')">PEDIDOS</a>
+            <a onclick="scrollToSection('contacto')">CONTACTO</a>
+            <button id="cartBtn" onclick="toggleCart()">🛒 Carrito (<span id="cartCount">0</span>)</button>
+        </nav>
+    </header>
+
+    <div class="hero" id="inicio">
+        <video autoplay muted loop playsinline>
+            <source src="./cafe-rojo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>DEL ORIGEN A TU ÉXITO</h1>
+            <p class="subtitle">Calidad y Sostenibilidad en cada fruto</p>
+            <a class="btn" onclick="scrollToSection('catalogo')">EXPLORA NUESTRO CATÁLOGO</a>
+        </div>
+    </div>
+
+    <section id="nosotros">
+        <h2>NOSOTROS</h2>
+        <div class="nosotros-grid">
+            <div>
+                <h3 class="gold-text">Más de 15 años conectando el campo con el mundo</h3>
+                <p style="line-height:1.9;font-size:18px;margin:25px 0">Jolly Foods nace en el corazón de Santander, Colombia. Somos el puente entre 300+ familias agricultoras y los mercados más exigentes de Europa, USA y Asia.</p>
+                <p style="line-height:1.9;font-size:18px">No somos intermediarios. Somos socios estratégicos. Acompañamos cada cosecha, garantizamos trazabilidad total y pagamos precio justo. Porque cuando el origen gana, tu negocio gana.</p>
+                <p class="gold-text" style="font-size:22px;font-weight:bold;margin-top:35px">“Calidad sin atajos. Sostenibilidad sin excusas.”</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800" alt="Campo Jolly Foods">
+        </div>
+    </section>
+
+    <section id="catalogo">
+        <h2>NUESTRO CATÁLOGO</h2>
+        
+        <div class="catalogo-item" onclick="toggleCatalogo('palmito')">
+            <h3>▶ LÍNEA PALMITO PREMIUM</h3>
+            <div class="catalogo-content" id="palmito">
+                <div class="productos-grid">
+                    <div class="producto-card">
+                        <img src="./palmito-productos.png" alt="Palmito en Conserva Clásico">
+                        <h4>Palmito en Conserva Clásico</h4>
+                        <p style="font-size:14px;margin:10px 0">Corazones tiernos en salmuera natural. Textura firme y sabor suave. 400g. Ideal ensaladas.</p>
+                        <div class="precio">$12</div>
+                        <button class="btn btn-small" onclick="addToCart('Palmito en Conserva Clásico', '$12', event)">AÑADIR</button>
+                    </div>
+                    <div class="producto-card">
+                        <img src="./palmito-productos.png" alt="Palmito Premium Entero">
+                        <h4>Palmito Premium Entero</h4>
+                        <p style="font-size:14px;margin:10px 0">Selección de los mejores tallos enteros. Sin fibra. Empaque al vacío. 500g. Línea HORECA.</p>
+                        <div class="precio">$15</div>
+                        <button class="btn btn-small" onclick="addToCart('Palmito Premium Entero', '$15', event)">AÑADIR</button>
+                    </div>
+                    <div class="producto-card">
+                        <img src="./palmito-productos.png" alt="Palmito en Rodajas">
+                        <h4>Palmito en Rodajas</h4>
+                        <p style="font-size:14px;margin:10px 0">Corte uniforme 8mm. Listo para servir. Perfecto para pizzas, pastas y canapés. 300g.</p>
+                        <div class="precio">$10</div>
+                        <button class="btn btn-small" onclick="addToCart('Palmito en Rodajas', '$10', event)">AÑADIR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalogo-item" onclick="toggleCatalogo('pina')">
+            <h3>▶ LÍNEA PIÑA DORADA MD2</h3>
+            <div class="catalogo-content" id="pina">
+                <div class="productos-grid">
+                    <div class="producto-card">
+                        <img src="./pina-productos.png" alt="Zumo de Piña 100% Natural">
+                        <h4>Zumo de Piña 100% Natural</h4>
+                        <p style="font-size:14px;margin:10px 0">NFC sin azúcares añadidos. Pasteurizado en frío. Brix 14-16°. Botella PET 1L.</p>
+                        <div class="precio">$8</div>
+                        <button class="btn btn-small" onclick="addToCart('Zumo de Piña 100% Natural', '$8', event)">AÑADIR</button>
+                    </div>
+                    <div class="producto-card">
+                        <img src="./pina-productos.png" alt="Rodajas de Piña en Almíbar">
+                        <h4>Rodajas de Piña en Almíbar</h4>
+                        <p style="font-size:14px;margin:10px 0">Rodajas enteras en almíbar ligero. Lata 565g. Color dorado uniforme. Premium.</p>
+                        <div class="precio">$9</div>
+                        <button class="btn btn-small" onclick="addToCart('Rodajas de Piña en Almíbar', '$9', event)">AÑADIR</button>
+                    </div>
+                    <div class="producto-card">
+                        <img src="./pina-productos.png" alt="Crunchyroll de Piña Deshidratada">
+                        <h4>Crunchyroll de Piña Deshidratada</h4>
+                        <p style="font-size:14px;margin:10px 0">Snack crujiente 100% fruta. Sin azúcar. Deshidratado a baja temperatura. 50g.</p>
+                        <div class="precio">$6</div>
+                        <button class="btn btn-small" onclick="addToCart('Crunchyroll de Piña Deshidratada', '$6', event)">AÑADIR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cafe">
+        <h2>CAFÉ GOURMET</h2>
+        <h3 class="gold-text">La Historia: De la Finca La Esperanza a tu Taza</h3>
+        <p style="line-height:1.9;font-size:18px;margin:30px 0">Todo empezó en 2008 cuando Don Alberto, caficultor de 3ra generación en Huila, nos dijo: "Mi café se vende como commodity, pero sabe a gloria". Decidimos cambiar eso.</p>
+        <p style="line-height:1.9;font-size:18px;margin:30px 0">Hoy trabajamos con 120 fincas entre 1500 y 2100 msnm. Instalamos laboratorios de catación en origen, capacitamos en procesos post-cosecha y pagamos hasta 40% sobre bolsa NY.</p>
+
+        <h3 class="gold-text" style="margin-top:70px;font-size:2.5rem">NUESTRAS 8 VARIEDADES DE ORIGEN</h3>
+        <p style="text-align:center;margin-bottom:40px;font-size:18px">Haz clic en cada variedad para desplegar ficha técnica completa</p>
+        
+        <div class="variedades">
+            <div class="variedad" onclick="toggleVariedad('v1',event)">
+                <h4>1. GEISHA</h4>
+                <p class="origen">Sierra Nevada - 2000msnm</p>
+                <span class="badge">SCA 90+</span><span class="badge">Premium</span>
+                <div class="variedad-desc" id="v1">
+                    <strong>Notas de Cata:</strong>
+                    <p>Bergamota, mango maduro, floral intenso, té Earl Grey, jazmín, papaya, miel de acacia. Acidez cítrica elegante tipo limón Meyer. Dulzura etérea con final prolongado a flores blancas que permanece más de 60 segundos en boca. Cuerpo sedoso tipo té de jazmín.</p>
+                    <strong>Perfil Técnico:</strong>
+                    <p>Altura: 2000-2100 msnm | Proceso: Lavado experimental con levaduras nativas aisladas de la finca | Varietal: Geisha panameña adaptada a Colombia | Cosecha: Noviembre-Febrero | Cuerpo: Etéreo, sedoso, té-like | Acidez: Cítrica alta brillante | Humedad: 11.2% | Densidad: 820 g/L | Defectos: 0</p>
+                    <strong>Características:</strong>
+                    <p>La variedad más exclusiva y cara del mundo. Solo 5 sacos de 35kg disponibles por año. La altura extrema combinada con el microclima de montaña costera de la Sierra Nevada produce un perfil floral-terpénico inigualable en el mundo. Cultivo bajo sombra de guamos nativos. Fermentación anaeróbica controlada 48h en tanques de acero inoxidable. Secado lento 25 días en camas elevadas bajo techo. Precio FOB: $50-80 USD/lb verde. Solo bajo reserva anual con contrato de compra anticipada. Ideal para competencias de barismo WBC, tostadores de élite y cafeterías de lujo. Perfil usado por campeones mundiales.</p>
+                    <button class="btn btn-small" onclick="addToCart('Café Geisha', 'Consultar', event)">Consultar Disponibilidad</button>
+                </div>
+            </div>
+
+            <div class="variedad" onclick="toggleVariedad('v2',event)">
+                <h4>2. VILLA SARCHÍ</h4>
+                <p class="origen">Costa Rica adaptado - 1700msnm</p>
+                <span class="badge">SCA 86+</span><span class="badge">Especialidad</span>
+                <div class="variedad-desc" id="v2">
+                    <strong>Notas de Cata:</strong>
+                    <p>Cítricos dulces, mandarina, caramelo rubio, chocolate con leche, nuez tostada, miel de caña, acidez brillante balanceada. Final limpio y dulce prolongado con notas a almendra y caramelo.</p>
+                    <strong>Perfil Técnico:</strong>
+                    <p>Altura: 1600-1800 msnm | Proceso: Lavado tradicional con doble fermentación 24h + 12h | Varietal: Villa Sarchí | Cosecha: Mayo-Octubre | Cuerpo: Medio, cremoso | Acidez: Media-alta | Tueste: Medio recomendado | Solubilidad: Alta</p>
+                    <strong>Características:</strong>
+                    <p>Variedad costarricense adaptada exitosamente a Santander con 15 años de adaptación genética. Balance perfecto entre dulzor y acidez que la hace muy versátil para espresso y filtrados V60, Chemex, Aeropress. Resistente a roya, producción estable año tras año. 25 sacos de 70kg/año disponibles. Perfil comercial premium ideal para tostadores specialty que buscan consistencia y diferenciación. Certificable Rainforest Alliance. Excelente para blend de cafeterías specialty.</p>
+                    <button class="btn btn-small" onclick="addToCart('Café Villa Sarchí', 'Saco 70kg', event)">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="variedad" onclick="toggleVariedad('v3',event)">
+                <h4>3. KENIA</h4>
+                <p class="origen">SL28/SL34 - 1800msnm</p>
+                <span class="badge">SCA 87+</span><span class="badge">Exótico</span>
+                <div class="variedad-desc" id="v3">
+                    <strong>Notas de Cata:</strong>
+                    <p>Grosella negra, vino tinto, tomate seco, tamarindo, ciruela pasa, acidez fosfórica brillante vibrante, cuerpo jugoso tipo jugo de frutas rojas. Final vinoso complejo con notas a uva fermentada.</p>
+                    <strong>Perfil Técnico:</strong>
+                    <p>Altura: 1700-1900 msnm | Proceso: Lavado doble fermentación estilo keniano 36h + 12h sin agua | Varietal: SL28 60%, SL34 40% africanos | Cosecha: Junio-Diciembre | Cuerpo: Jugoso, denso | Acidez: Alta vibrante | pH: 4.8 | Tueste: Medio-claro</p>
+                    <strong>Características:</strong>
+                    <p>Varietales africanos adaptados a Colombia que replican el perfil salvaje y frutal único de los mejores Kenia AA de Nyeri. La fermentación sin agua, solo con el mucílago del café, concentra los ácidos y desarrolla el perfil característico de grosella y tomate. Solo 15 sacos/año. Buscado por tostadores de competencia y cafeterías de tercera ola. Precio premium $35-45 USD/lb. Cupping score promedio 87.2. Ideal para filtrados que resalten acidez.</p>
+                    <button class="btn btn-small" onclick="addToCart('Café Kenia', 'Saco 70kg', event)">Añadir al Carrito</button>
+                </div>
+            </div>
+
+            <div class="variedad" onclick="toggleVariedad('v4',event)">
+                <h4>4. CENTROAMERICANO</h4>
+                <p class="origen">Blend Caturra/Catuai - 1600msnm</p>
+                <span class="badge">SCA 85+</span><span class="badge">Balanceado</span>
+                <div
