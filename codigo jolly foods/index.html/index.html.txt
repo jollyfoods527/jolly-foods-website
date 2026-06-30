@@ -3,60 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jolly Foods - Del Origen a tu Éxito</title>
+    <title>Jolly Foods - Café de Especialidad</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-        body{font-family:'Arial',sans-serif;background:#0A2E1A;color:#fff}
+        body{font-family:Arial,sans-serif;background:#0A2E1A;color:#fff}
         header{background:#000;padding:15px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;border-bottom:3px solid #D4AF37}
         .logo span{font-weight:bold;font-size:22px;color:#D4AF37}
-        nav{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
-        nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:14px;cursor:pointer;transition:0.3s}
+        nav{display:flex;gap:25px;align-items:center;flex-wrap:wrap}
+        nav a{color:#fff;text-decoration:none;font-weight:bold;font-size:14px;transition:0.3s;cursor:pointer}
         nav a:hover{color:#D4AF37}
-        #cartBtn{background:#D4AF37;color:#000;border:none;padding:10px 20px;font-weight:bold;cursor:pointer;border-radius:5px}
-        #cartBtn:hover{background:#fff}
-        .hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
-        .hero video{position:absolute;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.6) saturate(1.2)}
-        .hero-overlay{position:absolute;width:100%;height:100%;background:radial-gradient(circle,rgba(10,46,26,0.2) 0%,rgba(10,46,26,0.85) 100%);z-index:2}
-        .hero-content{position:relative;z-index:3;text-align:center;padding:0 20px;max-width:1000px}
-        .hero h1{font-size:5rem;margin-bottom:25px;color:#D4AF37;text-shadow:4px 4px 20px #000;line-height:1.1;letter-spacing:2px}
-        .hero .subtitle{font-size:2.2rem;margin-bottom:50px;color:#fff;text-shadow:3px 3px 10px #000;font-weight:300}
-        .btn{background:#D4AF37;color:#000;padding:20px 50px;border:none;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;font-size:17px;transition:0.3s;border-radius:5px;box-shadow:0 4px 20px rgba(212,175,55,0.5);text-transform:uppercase}
-        .btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 8px 30px rgba(212,175,55,0.7)}
-        .btn-small{padding:12px 25px;font-size:14px;margin-top:15px}
-        section{padding:100px 5%;max-width:1400px;margin:auto;background:#0A2E1A}
-        h2{font-size:3.2rem;margin-bottom:50px;color:#D4AF37;text-align:center;text-shadow:2px 2px 10px #000}
-        h3{color:#D4AF37;font-size:2rem;margin-bottom:20px}
-        h4{color:#D4AF37;font-size:1.4rem;margin:20px 0 10px}
-        .gold-text{color:#D4AF37}
-        .nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-        .nosotros-grid img{width:100%;border:4px solid #D4AF37;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
-        .catalogo-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);margin:30px 0;padding:35px;cursor:pointer;border:3px solid #D4AF37;transition:0.3s;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.4)}
-        .catalogo-item:hover{background:#1a1a1a;border-color:#fff;transform:translateX(10px)}
-        .catalogo-content{display:none;padding:35px 0}
-        .catalogo-content.active{display:block}
-        .productos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
-        .producto-card{background:#0A2E1A;padding:20px;border:2px solid #D4AF37;border-radius:10px;text-align:center;transition:0.3s}
-        .producto-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(212,175,55,0.4)}
-        .producto-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:15px;background:#000}
-        .producto-card h4{font-size:1.1rem;margin:10px 0}
-        .producto-card .precio{color:#D4AF37;font-size:1.6rem;font-weight:bold;margin:15px 0}
-        .variedades{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;margin-top:50px}
-        .variedad{background:linear-gradient(135deg,#000 0%,#0d0d0d 100%);padding:30px;border:2px solid #D4AF37;cursor:pointer;transition:0.4s;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.5)}
-        .variedad:hover{border-color:#fff;transform:translateY(-8px);box-shadow:0 15px 50px rgba(212,175,55,0.4)}
-        .variedad h4{font-size:1.5rem;margin-bottom:12px}
-        .variedad .origen{font-size:14px;color:#aaa;margin-bottom:15px;font-style:italic}
-        .variedad .badge{display:inline-block;background:#D4AF37;color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:bold;margin:5px 5px 0 0}
-        .variedad-desc{display:none;margin-top:20px;font-size:15px;line-height:2;background:#0A2E1A;padding:25px;border-radius:8px;border:2px solid #D4AF37}
-        .variedad-desc.active{display:block}
-        .variedad-desc strong{color:#D4AF37;display:block;margin-top:15px;margin-bottom:8px;font-size:16px}
-        .variedad-desc p{margin:12px 0}
-        .calidad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;text-align:center}
-        .calidad-card{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px 25px;border:3px solid #D4AF37;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-        .calidad-card h3{font-size:3.5rem}
-        .mayoristas-hero{position:relative;height:70vh;overflow:hidden;margin:50px 0;border:4px solid #D4AF37;border-radius:10px}
-        .mayoristas-hero video{width:100%;height:100%;object-fit:cover;filter:brightness(0.7)}
-        .slogan{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;background:rgba(0,0,0,0.9);padding:50px;border:3px solid #D4AF37;border-radius:10px}
-        .slogan h3{font-size:3rem;margin:0;text-shadow:3px 3px 10px #000}
-        .formulario{background:linear-gradient(135deg,#000 0%,#1a1a1a 100%);padding:50px;margin-top:30px;border:3px solid #D4AF37;border-radius:10px}
-        .formulario input,.formulario textarea,.formulario select{width:100%;padding:18px;margin:15px 0;background:#0A2E1A;border:2px solid #D4AF37;color:#fff;font-size:16px;border-radius:5px}
-        .contacto-item{background:linear-gradient(135deg,#000 0%,#1a1a1a 
+        .dropdown{position:relative}
+        .dropdown-content{display:none;position:absolute;top:100%;left:0;background:#000;border:2px solid #D4AF37;border-radius:8px;min-width:250px;margin-top:10px;z-index:1001}
+        .dropdown-content.active{display:block}
+        .dropdown-content a{display:block;padding:12px 20px;color:#fff;text-decoration:none;border-bottom:1px solid #D4AF37}
+        .dropdown-content a:hover{background:#0A2E1A;color:#D4AF37}
+        .dropdown-content a:last-child{border-bottom:none}
+        #cartBtn{background:#D4AF37;color:#000;border:none;padding:8px 20px;border-radius:5px;font-weight:bold;cursor:pointer}
+        .hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#000}
+        .hero video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:brightness(0.85)}
+        .hero-content{position:relative;z-index:2;padding:0 20px}
+        .hero h1{font-size:6.5rem;color:#D4AF37;text-shadow:0 0 30px rgba(212,175,55,0.8);margin-bottom:20px}
+        .hero h2{font-size:2rem;margin-bottom:15px}
+        .hero p{font-size:1.2rem;margin-bottom:30px;max-width:600px;margin-left:auto;margin-right:auto}
+        .btn{padding:15px 35px;border:2px solid #D4AF37;background:transparent;color:#D4AF37;font-weight:bold;cursor:pointer;border-radius:8px;margin:10px;transition:0.3s}
+        .btn:hover{background:#D4AF37;color:#000}
+        section{padding:80px 5%}
+        .section-title{text-align:center;font-size:2.5rem;color:#D4AF37;margin-bottom:50px}
+        .nosotros-content{max-width:900px;margin:0 auto;line-height:1.9;font-size:1.1rem}
+        .nosotros-content p{margin-bottom:20px}
+        .btn-antonio{display:inline-block;background:#D4AF37;color:#000;padding:12px 30px;border-radius:8px;font-weight:bold;text-decoration:none;margin-top:20px;transition:0.3s}
+        .btn-antonio:hover{background:#fff;transform:scale(1.05)}
+        .catalogo-item{background:#000;margin:20px 0;padding:30px;cursor:pointer;border:3px solid #D4AF37;border-radius:12px}
+        .catalogo-header{display:flex;justify-content:space-between;align-items:center;font-size:1.3rem;font-weight:bold}
+        .catalogo-content{max-height:0;overflow:hidden;transition:max-height 0.6s}
+        .catalogo-content.active{max-height:5000px;padding:30px 0 0}
+        .productos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:25px}
+        .producto-card{background:#0A2E1A;padding:20px;border:2px solid #D4AF37;border-radius:12px;text-align:center}
+        .producto-card img{width:100%;max-width:250px;margin-bottom:15px;border-radius:8px;background:#222;min-height:150px;object-fit:cover}
+        .producto-card h4{color:#D4AF37;margin-bottom:10px}
+        .producto-card p{font-size:0.9rem;margin-bottom:10px;line-height:1.6}
+        .precio{font-size:1.5rem;color:#D4AF37;font-weight:bold;margin:10px 0}
+        .add-cart{background:#D4AF37;color:#000;border:none;padding:10px 25px;border-radius:5px;font-weight:bold;cursor:pointer;width:100%}
+        .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;justify-content:center}
+        .tab-btn{padding:10px 20px;border:2px solid #D4AF37;background:transparent;color:#D4AF37;cursor:pointer;border-radius:8px;font-weight:bold}
+        .tab-btn.active{background:#D4AF37;color:#000}
+        .tab-content{display:none}
+        .tab-content.active{display:block}
+        .cafe-ficha{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+        .cafe-ficha img{width:100%;border-radius:12px;border:3px solid #D4AF37}
+        .cafe-descripcion{line-height:1.8;margin-bottom:20px;font-size:1.05rem}
+        .ficha-datos{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+        .dato-box{background:#000;padding:15px;border:2px solid #D4AF37;border-radius:8px}
+        .dato-box strong{color:#D4AF37;display:block;margin-bottom:5px;font-size:0.9rem}
+        .caracteristicas{margin-top:25px;padding:20px;background:#000;border:2px solid #D4AF37;border-radius:8px}
+        .caracteristicas h4{color:#D4AF37;margin-bottom:15px}
+        .caracteristicas ul{list-style:none;padding:0}
+        .caracteristicas li{margin:10px 0;padding-left:20px;position:relative}
+        .caracteristicas li:before{content:"✓";position:absolute;left:0;color:#D4AF37;font-weight:bold}
+        #mayoristas video{width:100%;border-radius:12px;border:3px solid #D4AF37;margin-top:30px;background:#222;min-height:300px}
+        .cart-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:2000;align-items:center;justify-content:center}
+        .cart-modal.active{display:flex}
+        .cart-content{background:#0A2E1A;padding:40px;border:3px solid #D4AF37;border-radius:12px;max-width:500px;width:90%}
+        .cart-item{display:flex;justify-content:space-between;margin:15px 0;padding-bottom:15px;border-bottom:1px solid #D4AF37}
+        footer{background:#000;padding:40px 5%;text-align:center;border-top:3px solid #D4AF37}
+        @media(max-width:768px){.hero h1{font-size:3rem}nav{gap:10px}nav a{font-size:12px}.cafe-ficha{grid-template-columns:1fr}.dropdown-content{left:-50px}}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><span>JOLLY FOODS</span></div>
+        <nav>
+            <a href="#inicio">INICIO</a>
+            <a href="#nosotros">NOSOTROS</a>
+            <a href="#catalogo">CATÁLOGO</a>
+            <a href="#mayoristas">MAYORISTAS</a>
+            <div class="dropdown">
+                <a onclick="toggleDropdown()">CONTACTO ▼</a>
+                <div class="dropdown-content" id="contactDropdown">
+                    <a href="mailto:info@jollyfoods.cr">📧 info@jollyfoods.cr</a>
+                    <a href="https://wa.me/50688880000" target="_blank">📱 WhatsApp: +506 8888-0000</a>
+                    <a href="https://maps.google.com/?q=Naranjo,Alajuela,Costa+Rica" target="_blank">📍 Naranjo, Alajuela, Costa Rica</a>
+                    <a>🕒 Lun-Vie 8am-5pm</a>
+                </div>
+            </div>
+            <a href="#pedidos">PEDIDOS</a>
+            <button id="cartBtn">CARRITO <span id="cartCount">0</span></button>
+        </nav>
+    </header>
+    <section class="hero" id="inicio">
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="zerezas.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>CAFÉ DE ESPECIALIDAD</h1>
+            <h2>Del Origen a tu Éxito - Costa Rica</h2>
+            <p>Microlotes exclusivos SCA 90+. Finca El Puchol. Ediciones limitadas de 40kg.</p>
+            <button class="btn" onclick="document.getElementById('catalogo').scrollIntoView()">Descubrir Variedades</button>
+            <button class="btn" onclick="document.getElementById('mayoristas').scrollIntoView()">Soy Mayorista</button>
+        </div>
+    </section>
+    <section id="nosotros">
+        <h2 class="section-title">NOSOTROS</h2>
+        <div class="nosotros-content">
+            <p>Representa una experiencia única llena de distinción y elegancia, donde cada detalle refleja unión y calidez.</p>
+            <p>Más que una marca, es la pasión por lo exquisito, ofreciendo productos selectos que evocan calidad y tradición.</p>
+            <p>Los palmitos se cortan del núcleo de palmeras nativas de América del Sur y América Central. Luego de la cosecha, se cortan en diferentes presentaciones y se envasan en agua o salmuera.</p>
+            <p>El delicado sabor de los palmitos convierte a este alimento en una opción popular para ensaladas, pero también permite la preparación de una gran variedad de recetas creativas y nutritivas.</p>
+            <p>Contamos con un profesional en el sector cafetalero llamado Antonio Barrantes.</p>
+            <a href="https://www.instagram.com/reel/DFCmrJEq8Na/" target="_blank" rel="noopener" class="btn-antonio">CONOCE A ANTONIO BARRANTES</a>
+        </div>
+    </section>
+    <section id="catalogo">
+        <h2 class="section-title">CATÁLOGO COMPLETO</h2>
+        <div class="catalogo-item">
+            <div class="catalogo-header">LÍNEA PALMITO <span>▼</span></div>
+            <div class="catalogo-content">
+                <p>Corazón de palmito ecuatoriano gourmet</p>
+                <img src="palmito.png" alt="Palmito" style="width:100%;max-width:400px;margin:20px auto;display:block" loading="lazy">
+                <div class="productos-grid">
+                    <div class="producto-card">
+                        <h4>Palmito Entero Premium</h4>
+                        <p>Corazones seleccionados a mano, textura tierna, sabor suave. Origen: Santo Domingo, Ecuador. Peso neto: 400g. Sin preservantes.</p>
+                        <div class="precio">$4.50</div>
+                        <button class="add-cart" onclick="addCart('Palmito Entero Premium',4.5)">AGREGAR AL CARRITO</button>
+                    </div>
+                    <div class="producto-card">
+                        <h4>Crema de Palmito</h4>
+                        <p>Textura untuosa, ideal para dips y salsas gourmet. 250g. Sin gluten.</p>
+                        <div class="precio">$5.20</div>
+                        <button class="add-cart" onclick="addCart('Crema de Palmito',5.2)">AGREGAR AL CARRITO</button>
+                    </div>
+                    <div class="producto-card">
+                        <h4>Palmito en Trozos</h4>
+                        <p>Trozos medianos para salteados. Rendimiento 3-4 porciones. 350g.</p>
+                        <div class="precio">$3.80</div>
+                        <button class="add-cart" onclick="addCart('Palmito en Trozos',3.8)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="catalogo-item">
+            <div class="catalogo-header">LÍNEA PIÑA <span>▼</span></div>
+            <div class="catalogo-content">
+                <p>Piña Golden ecuatoriana de exportación</p>
+                <img src="pina-productos.png" alt="Piña" style="width:100%;max-width:500px;margin:20px auto;display:block" loading="lazy">
+                <div class="productos-grid">
+                    <div class="producto-card">
+                        <h4>Zumo de Piña 100% Natural</h4>
+                        <p>Sin azúcares añadidos. Pasteurizado. 1L. Rico en bromelina y vitamina C. Sin conservantes.</p>
+                        <div class="precio">$2.50</div>
+                        <button class="add-cart" onclick="addCart('Zumo de Piña',2.5)">AGREGAR AL CARRITO</button>
+                    </div>
+                    <div class="producto-card">
+                        <h4>Rodajas de Piña en Almíbar</h4>
+                        <p>Dulzura 16° Brix. 8 rodajas calibre A. 580g. Perfectas para postres y cocteles.</p>
+                        <div class="precio">$3.90</div>
+                        <button class="add-cart" onclick="addCart('Rodajas de Piña',3.9)">AGREGAR AL CARRITO</button>
+                    </div>
+                    <div class="producto-card">
+                        <h4>Crunchyroll de Piña</h4>
+                        <p>Crujiente, dulce y tropical. Snack deshidratado. 150g. Sin gluten. Alto en fibra.</p>
+                        <div class="precio">$4.20</div>
+                        <button class="add-cart" onclick="addCart('Crunchyroll de Piña',4.2)">AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        <div class="catalogo-item">
+            <div class="catalogo-header">LÍNEA CAFÉ <span>▼</span></div>
+            <div class="catalogo-content">
+                <p>Café de especialidad costarricense - Microlotes exclusivos</p>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab(event,'geisha')">GEISHA</button>
+                    <button class="tab-btn" onclick="showTab(event,'villa')">VILLA SARCHI</button>
+                    <button class="tab-btn" onclick="showTab(event,'kenia')">KENIA SL28</button>
+                    <button class="tab-btn" onclick="showTab(event,'centro')">CENTROAMERICANO</button>
+                    <button class="tab-btn" onclick="showTab(event,'lima')">TYPICA LIMA</button>
+                    <button class="tab-btn" onclick="showTab(event,'lourdes')">TYPICA LOURDES</button>
+                    <button class="tab-btn" onclick="showTab(event,'roque')">TYPICA SAN ROQUE</button>
+                </div>
+                <div id="geisha" class="tab-content active">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Geisha">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">GEISHA</h3>
+                            <p style="margin-bottom:20px">FINCA EL PUCHOL - Naranjo, Costa Rica</p>
+                            <p class="cafe-descripcion">Considerada la variedad más exclusiva del planeta. Originaria de Etiopía, perfeccionada en Panamá y ahora cultivada en nuestro microclima de Naranjo a 1.500 msnm. Este café es el resultado de 30 años de experimentación de Antonio Barrantes. Solo cosechamos 800 plantas de Geisha, lo que nos da apenas 40kg de café verde por año. Es una edición ultra-limitada.</p>
+                            <p class="cafe-descripcion">En taza: aromas intensos a jazmín y bergamota que recuerdan al té Earl Grey. Sabor complejo a mandarina, miel silvestre y flores blancas. Cuerpo sedoso como la seda, acidez brillante pero elegante, no agresiva. Postgusto largo y dulce que permanece en boca por minutos. Ideal para métodos de filtro como V60 o Chemex para apreciar toda su complejidad.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.500 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Lavado 24h + secado 15d solar</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio-claro</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 90-92</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Perfil floral intenso: jazmín, azahar, bergamota</li>
+                                    <li>Notas cítricas: mandarina, limón Meyer</li>
+                                    <li>Dulzor complejo: miel silvestre, caña de azúcar</li>
+                                    <li>Cuerpo sedoso, casi etéreo</li>
+                                    <li>Acidez málica brillante y elegante</li>
+                                    <li>Postgusto prolongado de 5+ minutos</li>
+                                    <li>Solo 40kg disponibles al año</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="villa" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Villa Sarchi">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">VILLA SARCHI</h3>
+                            <p style="margin-bottom:20px">Valle Occidental, Costa Rica</p>
+                            <p class="cafe-descripcion">Variedad 100% costarricense, descubierta como mutación natural de Bourbon en la finca Villa Sarchí. Es una de las pocas variedades endémicas de Costa Rica. Su porte bajo facilita la cosecha manual selectiva. Cultivada a 1450msnm en suelos volcánicos ricos en materia orgánica.</p>
+                            <p class="cafe-descripcion">En taza destaca por su perfil cítrico brillante con notas claras de naranja valencia y miel de abeja de altura. La acidez es viva pero balanceada. Cuerpo medio-cremoso que llena la boca. Es excepcional para espresso: produce una crema dorada espesa y un shot con dulzor natural sin necesidad de azúcar. También brilla en métodos de inmersión como prensa francesa.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.450 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Lavado 18h + secado 12d</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 86-88</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>100% variedad costarricense endémica</li>
+                                    <li>Notas cítricas: naranja valencia, limón</li>
+                                    <li>Dulzor: miel de abeja, caramelo</li>
+                                    <li>Cuerpo medio-cremoso excepcional</li>
+                                    <li>Acidez brillante bien balanceada</li>
+                                    <li>Ideal para espresso y métodos de inmersión</li>
+                                    <li>Crema dorada espesa en espresso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <div id="kenia" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Kenia">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">KENIA SL28</h3>
+                            <p style="margin-bottom:20px">Brunca, Costa Rica</p>
+                            <p class="cafe-descripcion">La legendaria genética SL28 desarrollada por Scott Laboratories en Kenia en los años 1930, ahora adaptada perfectamente a Costa Rica. Esta variedad es famosa mundialmente por su perfil de sabor único que no se encuentra en ninguna otra genética. Cultivada a 1.600 msnm en la región Brunca, donde el clima y suelo volcánico replican las condiciones de Kenia.</p>
+                            <p class="cafe-descripcion">En taza es una explosión de sabores: grosella negra, tomate seco maduro, y notas vinosas que recuerdan a un buen Pinot Noir. La acidez es vínica, intensa y jugosa. Cuerpo medio con textura sedosa. Es un café polarizante: lo amas o no lo entiendes. Perfecto para filtrados que resalten su acidez como V60 o Kalita.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.600 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Honey rojo 21d</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio-claro</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 87-89</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Genética legendaria de Kenia SL28</li>
+                                    <li>Frutos rojos intensos: grosella negra, arándano</li>
+                                    <li>Notas umami: tomate seco, aceituna</li>
+                                    <li>Acidez vínica jugosa y brillante</li>
+                                    <li>Cuerpo medio sedoso</li>
+                                    <li>Perfil único e inconfundible</li>
+                                    <li>Ideal para filtrados que resalten acidez</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <div id="centro" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Centroamericano">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">CENTROAMERICANO</h3>
+                            <p style="margin-bottom:20px">Los Santos, Costa Rica</p>
+                            <p class="cafe-descripcion">Híbrido F1 de última generación desarrollado para combinar lo mejor de dos mundos: la resistencia a la roya del Robusta y la calidad en taza del Arábica. Es el resultado de 15 años de investigación del CATIE. Esta variedad permite a los productores mantener rentabilidad sin sacrificar calidad, especialmente importante con el cambio climático.</p>
+                            <p class="cafe-descripcion">En taza sorprende: si no te dicen que es un híbrido, pensarías que es un Bourbon tradicional. Sabor clásico a chocolate negro 70%, caramelo tostado y nuez pecana. Cuerpo completo y cremoso que llena la boca. Acidez baja y dulce. Es el café perfecto para quien busca un perfil tradicional, dulce y achocolatado. Excelente en espresso y con leche.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.300 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Natural 25d</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio-oscuro</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 84-86</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Híbrido F1 resistente a roya</li>
+                                    <li>Chocolate negro 70% y caramelo tostado</li>
+                                    <li>Nuez pecana y avellana</li>
+                                    <li>Cuerpo completo y cremoso</li>
+                                    <li>Acidez baja y dulce</li>
+                                    <li>Perfecto para espresso y bebidas con leche</li>
+                                    <li>Sostenible y resistente al cambio climático</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lima" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Typica Lima">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">TYPICA LIMA</h3>
+                            <p style="margin-bottom:20px">Finca Lima, Tarrazú</p>
+                            <p class="cafe-descripcion">Línea pura de Typica, la variedad original que llegó de Etiopía a América hace 300 años. Cultivada en Finca Lima a 1.750 msnm en Tarrazú, una de las regiones más altas de Costa Rica. La altura extrema ralentiza la maduración del grano, concentrando azúcares y desarrollando complejidad. Son plantas de porte alto que requieren cuidado especial.</p>
+                            <p class="cafe-descripcion">En taza es elegancia pura: frutos rojos como cereza y frambuesa, panela artesanal, y especias dulces como canela y clavo. La acidez málica recuerda a manzana verde crocante. Cuerpo medio-sedoso. Es un café que evoluciona en la taza: empieza frutal, pasa a dulce y termina especiado. Proceso lavado con fermentación controlada de 36 horas que aporta complejidad.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.750 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Lavado + fermentación 36h</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 88-90</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Typica puro de altura extrema</li>
+                                    <li>Frutos rojos: cereza, frambuesa, granada</li>
+                                    <li>Dulzor: panela, azúcar morena</li>
+                                    <li>Especias dulces: canela, clavo</li>
+                                    <li>Acidez málica tipo manzana verde</li>
+                                    <li>Cuerpo medio-sedoso elegante</li>
+                                    <li>Evoluciona en taza: frutal → dulce → especiado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lourdes" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Typica Lourdes">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">TYPICA LOURDES</h3>
+                            <p style="margin-bottom:20px">Lourdes de Naranjo</p>
+                            <p class="cafe-descripcion">Microlote exclusivo de Typica cultivado en Lourdes de Naranjo a 1.650 msnm. Esta finca tiene un microclima único con neblina matutina que protege los cafetos del sol directo. El proceso Honey amarillo de 15 días permite que el mucílago se adhiera al grano durante el secado, aportando dulzor y cuerpo sin llegar a la intensidad del Honey rojo.</p>
+                            <p class="cafe-descripcion">Perfil delicado y floral: té verde jazmín, flores de azahar y durazno maduro. La acidez es cítrica suave, como de toronja rosada. Cuerpo sedoso que se desliza en boca. Es un café de tarde, para disfrutar despacio. La dulzura natural del honey se percibe como miel de flores silvestres. Postgusto limpio y refrescante.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.650 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Honey amarillo 15d</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio-claro</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 87-89</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Perfil floral: té verde, jazmín, azahar</li>
+                                    <li>Fruta de hueso: durazno, albaricoque</li>
+                                    <li>Dulzor: miel de flores silvestres</li>
+                                    <li>Acidez cítrica suave tipo toronja</li>
+                                    <li>Cuerpo sedoso y elegante</li>
+                                    <li>Postgusto limpio y refrescante</li>
+                                    <li>Ideal para métodos de filtro delicados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="roque" class="tab-content">
+                    <div class="cafe-ficha">
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=500" alt="Typica San Roque">
+                        <div>
+                            <h3 style="color:#D4AF37;font-size:2rem;margin-bottom:15px">TYPICA SAN ROQUE</h3>
+                            <p style="margin-bottom:20px">Finca San Roque, Poás</p>
+                            <p class="cafe-descripcion">Typica cultivado en las faldas del Volcán Poás a 1.700 msnm. El suelo volcánico rico en minerales y la altura extrema producen granos densos con alta concentración de azúcares. Proceso Natural Anaeróbico de 30 días: los granos fermentan en tanques sellados sin oxígeno, desarrollando perfiles únicos de cacao y vainilla que no se logran con otros procesos.</p>
+                            <p class="cafe-descripcion">En taza es decadente: cacao en polvo 80%, avellana tostada y vainilla bourbon. La acidez es muy baja, casi imperceptible, lo que lo hace perfecto para quien no tolera cafés ácidos. Cuerpo completo y cremoso. Dulzor intenso natural. Es como tomar un postre líquido. Ideal para prensa francesa o cold brew donde su dulzor y cuerpo brillan sin que la acidez moleste.</p>
+                            <div class="ficha-datos">
+                                <div class="dato-box"><strong>ALTITUD</strong>1.700 msnm</div>
+                                <div class="dato-box"><strong>PROCESO</strong>Natural anaeróbico 30d</div>
+                                <div class="dato-box"><strong>TUESTE</strong>Medio</div>
+                                <div class="dato-box"><strong>PUNTAJE</strong>SCA 86-87</div>
+                            </div>
+                            <div class="caracteristicas">
+                                <h4>CARACTERÍSTICAS PRINCIPALES</h4>
+                                <ul>
+                                    <li>Cacao en polvo 80% y chocolate</li>
+                                    <li>Avellana tostada y nuez</li>
+                                    <li>Vainilla bourbon natural</li>
+                                    <li>Acidez muy baja, casi imperceptible</li>
+                                    <li>Cuerpo completo y cremoso</li>
+                                    <li>Dulzor intenso tipo postre</li>
+                                    <li>Perfecto para prensa francesa y cold brew</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="mayoristas">
+        <h2 class="section-title">MAYORISTAS</h2>
+        <p style="text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.8">Exportamos café de especialidad y productos gourmet a todo el mundo. Microlotes certificados SCA. Capacidad: 20 contenedores/mes. Incoterms FOB/EXW.</p>
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="contenedores.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section id="pedidos">
+        <h2 class="section-title">PEDIDOS</h2>
+        <form style="max-width:600px;margin:0 auto" onsubmit="alert('Pedido enviado! Te contactaremos pronto.');return false;">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <
